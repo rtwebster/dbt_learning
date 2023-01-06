@@ -1,2 +1,3 @@
+
 SELECT ID as customer_id, first_name, last_name
-FROM dbt_rtwebster.raw_customers
+FROM {{ source('jaffle_shop', 'raw_customers') }}

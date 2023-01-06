@@ -4,4 +4,4 @@ select
     order_date,
     status
 
-from dbt_rtwebster.raw_orders
+from {{ source('jaffle_shop', 'raw_orders') }}

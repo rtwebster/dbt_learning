@@ -5,4 +5,4 @@ sources:
     database: analytics
     schema: dbt_rtwebster
     tables:
-      - name: payments
+      - name: raw_payments

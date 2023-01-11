@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_payments
+    description: staging table for payment data coming from stripe
+    columns:
+      - name: payment_id
+        description: Primary Key for payment records
+        tests:
+        - unique
+        - not_null
+      - name: order_id
+        description: Foreign key to link with jaffle_shop.stg_orders table
+        tests:
+        - unique
+        - not_null
+      - name: payment_method
+        description: "{{doc('payment_method')}}"
+        tests:
+        - accepted_values:
+            values: ['credit_card','gift_card','coupon','bank_transfer']
+      - name: amount
+        description: amount paid

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: analytics
+    schema: dbt_rtwebster
+    tables:
+      - name: raw_customers
+        description: source data for customers from csv seed
+      - name: raw_orders
+        description: source data for orders from csv seed
